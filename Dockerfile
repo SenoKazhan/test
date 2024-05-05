@@ -1,5 +1,6 @@
 FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
-COPY . .
+COPY ./src src/
+COPY ./pom.xml pom.xml
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
